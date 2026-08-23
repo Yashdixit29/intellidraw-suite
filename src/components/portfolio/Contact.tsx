@@ -43,8 +43,10 @@ export function Contact() {
   const [values, setValues] = useState({ name: "", email: "", subject: "", message: "" });
   const [errors, setErrors] = useState<Errors>({});
   const [sent, setSent] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
-  const onSubmit = (e: React.FormEvent) => {
+  const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const result = schema.safeParse(values);
     if (!result.success) {
@@ -54,11 +56,33 @@ export function Contact() {
         if (!next[key]) next[key] = issue.message;
       });
       setErrors(next);
+      setSubmitError(null);
       return;
     }
     setErrors({});
-    setSent(true);
-    setValues({ name: "", email: "", subject: "", message: "" });
+    setSubmitError(null);
+    setSending(true);
+
+    try {
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          from_name: values.name,
+          from_email: values.email,
+          subject: values.subject,
+          message: values.message,
+        },
+        EMAILJS_PUBLIC_KEY,
+      );
+      setSent(true);
+      setValues({ name: "", email: "", subject: "", message: "" });
+    } catch (error) {
+      console.error("EmailJS error:", error);
+      setSubmitError("Something went wrong while sending your message. Please try again or email directly.");
+    } finally {
+      setSending(false);
+    }
   };
 
   const inputClass =
