@@ -1,7 +1,7 @@
 import { ArrowRight, Mail, Sparkles } from "lucide-react";
-import portraitAsset from "@/assets/yash-portrait.png.asset.json";
+import { PORTRAIT_IMAGE, CURIOSITY_IMAGE, NIOR_IMAGE } from "@/lib/portfolio-images";
 
-const portrait = portraitAsset.url;
+const portrait = PORTRAIT_IMAGE;
 
 export function Hero() {
   return (
