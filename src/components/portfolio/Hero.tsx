@@ -7,7 +7,7 @@ export function Hero() {
       <div className="relative mx-auto max-w-6xl overflow-hidden rounded-[2.5rem] bg-gradient-primary px-6 py-16 sm:px-12 sm:py-20">
         <div className="pointer-events-none absolute inset-0 grid-backdrop opacity-40" />
         <span className="pointer-events-none absolute top-14 right-28 hidden h-44 w-44 rounded-full bg-accent lg:block" />
-        <span className="pointer-events-none absolute -right-16 -bottom-10 hidden h-64 w-64 rounded-full bg-accent/80 lg:block" />
+        <span className="pointer-events-none absolute -right-16 -bottom-10 hidden h-64 w-64 rounded-full bg-accent lg:block" />
         <span className="pointer-events-none absolute top-8 left-1/2 hidden h-3 w-3 rounded-full bg-accent lg:block" />
 
         <div className="relative grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
