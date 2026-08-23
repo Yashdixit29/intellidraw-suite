@@ -65,7 +65,7 @@ export function Hero() {
               </p>
             </div>
           </div>
-          <div className="absolute -bottom-5 -left-5 rounded-2xl glass-card px-4 py-3">
+          <div className="absolute -top-5 -left-5 rounded-2xl glass-card px-4 py-3">
             <p className="font-display text-lg font-bold text-primary">2</p>
             <p className="text-[11px] text-muted-foreground">Full-stack AI projects</p>
           </div>
