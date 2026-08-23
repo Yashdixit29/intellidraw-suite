@@ -57,11 +57,11 @@ export function Contact() {
   };
 
   const inputClass =
-    "w-full rounded-xl border border-input bg-secondary/40 px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/70 outline-none transition-colors focus:border-primary";
+    "w-full rounded-xl border border-input bg-secondary px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/70 outline-none transition-colors focus:border-primary";
 
   return (
     <section id="contact" className="relative py-24">
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-80 bg-violet/10 blur-[140px]" />
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-80 bg-accent-soft/60 blur-[120px]" />
       <div className="relative mx-auto max-w-6xl px-5">
         <SectionHeading
           eyebrow="Contact"
@@ -79,7 +79,7 @@ export function Contact() {
                 rel={href.startsWith("http") ? "noreferrer" : undefined}
                 className="flex min-w-0 items-center gap-4 rounded-2xl glass-card p-5 transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/40"
               >
-                <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-gradient-accent text-primary-foreground">
+                <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-gradient-primary text-primary-foreground">
                   <Icon className="h-5 w-5" />
                 </span>
                 <span className="min-w-0">
@@ -157,7 +157,7 @@ export function Contact() {
 
                 <button
                   type="submit"
-                  className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-accent px-6 py-3.5 text-sm font-semibold text-primary-foreground transition-transform hover:scale-[1.01] sm:w-auto"
+                  className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground transition-transform hover:scale-[1.01] sm:w-auto"
                 >
                   <Send className="h-4 w-4" />
                   Send Message
