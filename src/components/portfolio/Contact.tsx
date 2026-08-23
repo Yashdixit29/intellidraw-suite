@@ -190,10 +190,11 @@ export function Contact() {
 
                 <button
                   type="submit"
-                  className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground transition-transform hover:scale-[1.01] sm:w-auto"
+                  disabled={sending}
+                  className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground transition-transform hover:scale-[1.01] disabled:opacity-70 disabled:cursor-not-allowed sm:w-auto"
                 >
                   <Send className="h-4 w-4" />
-                  Send Message
+                  {sending ? "Sending..." : "Send Message"}
                 </button>
               </form>
             )}
