@@ -3,71 +3,72 @@ import portrait from "@/assets/yash-portrait.jpg";
 
 export function Hero() {
   return (
-    <section id="home" className="relative overflow-hidden pt-36 pb-20 sm:pt-44 sm:pb-28">
-      <div className="pointer-events-none absolute inset-0 grid-backdrop opacity-60" />
-      <div className="pointer-events-none absolute -top-32 left-1/2 h-[420px] w-[720px] -translate-x-1/2 rounded-full bg-primary/18 blur-[120px]" />
-      <div className="pointer-events-none absolute top-40 right-0 h-72 w-72 rounded-full bg-violet/20 blur-[110px]" />
+    <section id="home" className="px-4 pt-24 sm:px-6">
+      <div className="relative mx-auto max-w-6xl overflow-hidden rounded-[2.5rem] bg-gradient-primary px-6 py-16 sm:px-12 sm:py-20">
+        <div className="pointer-events-none absolute inset-0 grid-backdrop opacity-40" />
+        <span className="pointer-events-none absolute top-16 right-24 h-40 w-40 rounded-full bg-accent/70 blur-[2px]" />
+        <span className="pointer-events-none absolute -right-10 bottom-0 h-56 w-56 rounded-full bg-accent/50" />
+        <span className="pointer-events-none absolute top-8 left-1/2 hidden h-3 w-3 rounded-full bg-accent lg:block" />
 
-      <div className="relative mx-auto grid max-w-6xl items-center gap-14 px-5 lg:grid-cols-[1.05fr_0.95fr]">
-        <div className="reveal">
-          <span className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/50 px-4 py-1.5 text-xs tracking-wide text-muted-foreground">
-            <Sparkles className="h-3.5 w-3.5 text-primary" />
-            MCA (Integrated) Student · Open to internships
-          </span>
+        <div className="relative grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
+          <div className="reveal">
+            <span className="inline-flex items-center gap-2 rounded-full bg-primary-foreground/15 px-4 py-1.5 text-xs text-primary-foreground">
+              <Sparkles className="h-3.5 w-3.5 text-accent" />
+              MCA (Integrated) Student · Open to internships
+            </span>
 
-          <h1 className="mt-6 text-4xl leading-[1.05] font-bold sm:text-6xl">
-            Yash Dixit
-            <span className="mt-2 block text-gradient">AI &amp; Full-Stack Developer</span>
-          </h1>
+            <h1 className="mt-6 text-4xl leading-[1.12] text-primary-foreground sm:text-5xl">
+              Hello, I'm Yash Dixit An
+              <span className="mt-1 block text-accent">AI &amp; Full-Stack Developer</span>
+            </h1>
 
-          <p className="mt-5 font-mono text-sm tracking-wide text-primary">
-            RAG Pipeline • AI • Prompt Engineering
-          </p>
+            <p className="mt-4 font-mono text-sm tracking-wide text-primary-foreground/80">
+              RAG Pipeline • AI • Prompt Engineering
+            </p>
 
-          <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground">
-            MCA (Integrated) student with practical experience building full-stack web
-            applications and AI-powered solutions, including responsive interfaces, backend
-            systems, REST APIs, databases, AI chatbots, and OpenAI API integrations.
-          </p>
+            <p className="mt-5 max-w-xl text-sm leading-relaxed text-primary-foreground/85 sm:text-base">
+              MCA (Integrated) student with practical experience building full-stack web
+              applications and AI-powered solutions, including responsive interfaces, backend
+              systems, REST APIs, databases, AI chatbots, and OpenAI API integrations.
+            </p>
 
-          <div className="mt-9 flex flex-wrap gap-3">
-            <a
-              href="#projects"
-              className="group inline-flex items-center gap-2 rounded-full bg-gradient-accent px-6 py-3.5 text-sm font-semibold text-primary-foreground glow-ring transition-transform hover:scale-[1.03]"
-            >
-              View Projects
-              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </a>
-            <a
-              href="#contact"
-              className="inline-flex items-center gap-2 rounded-full border border-border px-6 py-3.5 text-sm font-semibold text-foreground transition-colors hover:bg-secondary"
-            >
-              <Mail className="h-4 w-4" />
-              Contact Me
-            </a>
-          </div>
-        </div>
-
-        <div className="reveal relative mx-auto w-full max-w-sm">
-          <div className="pointer-events-none absolute -inset-6 rounded-[2.5rem] bg-gradient-accent opacity-25 blur-2xl" />
-          <div className="relative overflow-hidden rounded-[2rem] glass-card float-slow">
-            <img
-              src={portrait}
-              alt="Portrait of Yash Dixit — placeholder profile image"
-              width={1024}
-              height={1280}
-              className="aspect-[4/5] w-full object-cover"
-            />
-            <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-background via-background/60 to-transparent p-5">
-              <p className="font-display text-sm font-semibold">Yash Dixit</p>
-              <p className="text-xs text-muted-foreground">
-                Placeholder profile image — replace with a real photo
-              </p>
+            <div className="mt-9 flex flex-wrap gap-3">
+              <a
+                href="#projects"
+                className="group inline-flex items-center gap-2 rounded-full bg-gradient-accent px-6 py-3.5 text-sm font-semibold text-accent-foreground transition-transform hover:scale-[1.03]"
+              >
+                View Projects
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </a>
+              <a
+                href="#contact"
+                className="inline-flex items-center gap-2 rounded-full border border-primary-foreground/40 px-6 py-3.5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary-foreground/10"
+              >
+                <Mail className="h-4 w-4" />
+                Contact Me
+              </a>
             </div>
           </div>
-          <div className="absolute -top-5 -left-5 rounded-2xl glass-card px-4 py-3">
-            <p className="font-display text-lg font-bold text-primary">2</p>
-            <p className="text-[11px] text-muted-foreground">Full-stack AI projects</p>
+
+          <div className="reveal relative mx-auto w-full max-w-sm">
+            <span className="pointer-events-none absolute -top-6 -left-8 h-32 w-32 rounded-full bg-accent" />
+            <div className="relative overflow-hidden rounded-[2rem] border border-primary-foreground/20 bg-primary-foreground/10 float-slow">
+              <img
+                src={portrait}
+                alt="Portrait of Yash Dixit — placeholder profile image"
+                width={1024}
+                height={1280}
+                className="aspect-[4/5] w-full object-cover"
+              />
+            </div>
+            <div className="absolute -bottom-5 -left-4 rounded-2xl bg-background px-4 py-3 shadow-[var(--shadow-lift)]">
+              <p className="font-display text-lg text-primary">2</p>
+              <p className="text-[11px] text-muted-foreground">Full-stack AI projects</p>
+            </div>
+            <div className="absolute top-6 -right-3 rounded-2xl bg-background px-4 py-2.5 shadow-[var(--shadow-lift)]">
+              <p className="text-xs font-semibold text-foreground">Placeholder photo</p>
+              <p className="text-[11px] text-muted-foreground">Swap in a real portrait</p>
+            </div>
           </div>
         </div>
       </div>
