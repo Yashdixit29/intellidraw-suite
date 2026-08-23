@@ -2,7 +2,7 @@
 
 <portfolio_prompt>
 
-Take this image as an example, Create a modern, premium, responsive personal portfolio website for **Yash Dixit**, an MCA (Integrated) student and aspiring AI & Full-Stack Developer specializing in **RAG pipelines, Generative AI, Prompt Engineering, AI chatbot development, and modern web development**.
+Take this image as an example, Create a modern, premium, responsive personal portfolio website for Yash Dixit, an MCA (Integrated) student and aspiring AI & Full-Stack Developer specializing in **RAG pipelines, Generative AI, Prompt Engineering, AI chatbot development, and modern web development**.
 
 The website should present Yash as a technically capable developer who combines full-stack engineering with AI-powered solutions. The overall design should feel professional, modern, minimal, technology-focused, and suitable for internship and entry-level opportunities.
 
@@ -10,7 +10,7 @@ The website should present Yash as a technically capable developer who combines 
 
 Create a visually impressive hero section immediately communicating Yash's technical identity.
 
-**Name:**
+Name:
 Yash Dixit
 
 **Primary headline:**
