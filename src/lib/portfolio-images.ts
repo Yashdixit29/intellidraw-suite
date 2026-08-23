@@ -1,4 +1,4 @@
 // Live image URLs — update these and the site picks up the new images.
-export const PORTRAIT_IMAGE = "https://i.postimg.cc/sMDQdp5t/yash-portrait.png";
-export const CURIOSITY_IMAGE = "https://i.postimg.cc/218bR4nJ/curiosity-ai.png";
-export const NIOR_IMAGE = "https://i.postimg.cc/87PJQhLX/nior-store.png";
+export const PORTRAIT_IMAGE = https://github.com/Yashdixit29/intellidraw-suite/blob/main/yash-portrait.png?raw=true;
+export const CURIOSITY_IMAGE = https://github.com/Yashdixit29/intellidraw-suite/blob/main/nior-store.png?raw=true;
+export const NIOR_IMAGE = https://github.com/Yashdixit29/intellidraw-suite/blob/main/curiosity-ai.png?raw=true;
