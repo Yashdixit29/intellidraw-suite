@@ -1,10 +1,9 @@
 import { ArrowUpRight, Check } from "lucide-react";
 import { SectionHeading } from "./SectionHeading";
-import curiosityAsset from "@/assets/curiosity-ai.png.asset.json";
-import niorAsset from "@/assets/nior-store.png.asset.json";
+import { CURIOSITY_IMAGE, NIOR_IMAGE } from "@/lib/portfolio-images";
 
-const curiosity = curiosityAsset.url;
-const nior = niorAsset.url;
+const curiosity = CURIOSITY_IMAGE;
+const nior = NIOR_IMAGE;
 
 const PROJECTS = [
   {
