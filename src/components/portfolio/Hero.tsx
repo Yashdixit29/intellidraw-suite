@@ -1,5 +1,7 @@
 import { ArrowRight, Mail, Sparkles } from "lucide-react";
-import portrait from "@/assets/yash-portrait.jpg";
+import portraitAsset from "@/assets/yash-portrait.png.asset.json";
+
+const portrait = portraitAsset.url;
 
 export function Hero() {
   return (
