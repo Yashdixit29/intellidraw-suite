@@ -156,6 +156,7 @@ export function Contact() {
                       type={field.type}
                       placeholder={field.placeholder}
                       value={values[field.name]}
+                      disabled={sending}
                       onChange={(e) =>
                         setValues((v) => ({ ...v, [field.name]: e.target.value }))
                       }
