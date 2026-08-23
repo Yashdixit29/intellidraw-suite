@@ -1,24 +1,71 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Nav } from "@/components/portfolio/Nav";
+import { Hero } from "@/components/portfolio/Hero";
+import { About } from "@/components/portfolio/About";
+import { Skills } from "@/components/portfolio/Skills";
+import { Projects } from "@/components/portfolio/Projects";
+import { Services } from "@/components/portfolio/Services";
+import { Education } from "@/components/portfolio/Education";
+import { Contact } from "@/components/portfolio/Contact";
+import { Footer } from "@/components/portfolio/Footer";
+import { useReveal } from "@/hooks/use-reveal";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
+const TITLE = "Yash Dixit — AI & Full-Stack Developer";
+const DESCRIPTION =
+  "Portfolio of Yash Dixit, MCA (Integrated) student and AI & full-stack developer building RAG pipelines, AI chatbots, REST APIs and responsive web applications.";
+
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: TITLE },
+      { name: "description", content: DESCRIPTION },
+      { property: "og:title", content: TITLE },
+      { property: "og:description", content: DESCRIPTION },
+      { property: "og:type", content: "profile" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Person",
+          name: "Yash Dixit",
+          jobTitle: "AI & Full-Stack Developer",
+          email: "mailto:yashdixit2910@gmail.com",
+          telephone: "+91-9457642662",
+          sameAs: ["https://linkedin.com/in/iamyashdixit"],
+          alumniOf: "Noida Institute of Engineering and Technology",
+          knowsAbout: [
+            "Generative AI",
+            "Prompt Engineering",
+            "RAG Pipelines",
+            "React",
+            "Node.js",
+          ],
+        }),
+      },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
+  useReveal();
+
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="min-h-screen bg-background">
+      <Nav />
+      <main>
+        <Hero />
+        <About />
+        <Skills />
+        <Projects />
+        <Services />
+        <Education />
+        <Contact />
+      </main>
+      <Footer />
     </div>
   );
 }
