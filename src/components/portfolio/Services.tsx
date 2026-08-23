@@ -57,7 +57,7 @@ export function Services() {
               key={title}
               className="reveal group relative overflow-hidden rounded-3xl glass-card p-7 transition-all duration-300 hover:-translate-y-1 hover:border-primary/40"
             >
-              <span className="absolute -top-16 -right-16 h-32 w-32 rounded-full bg-primary/20 opacity-0 blur-2xl transition-opacity duration-300 group-hover:opacity-100" />
+              <span className="absolute -top-16 -right-16 h-32 w-32 rounded-full bg-accent/30 opacity-0 blur-2xl transition-opacity duration-300 group-hover:opacity-100" />
               <Icon className="h-7 w-7 text-primary" />
               <h3 className="mt-5 text-lg font-semibold">{title}</h3>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{body}</p>

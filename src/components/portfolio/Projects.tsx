@@ -41,7 +41,7 @@ const PROJECTS = [
 export function Projects() {
   return (
     <section id="projects" className="relative py-24">
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-72 bg-primary/8 blur-[130px]" />
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-72 bg-accent-soft/50 blur-[120px]" />
       <div className="relative mx-auto max-w-6xl px-5">
         <SectionHeading
           eyebrow="Projects"
@@ -56,7 +56,7 @@ export function Projects() {
               className="reveal group grid gap-0 overflow-hidden rounded-[2rem] glass-card transition-all duration-300 hover:border-primary/40 lg:grid-cols-2"
             >
               <div
-                className={`relative overflow-hidden bg-secondary/40 ${i % 2 === 1 ? "lg:order-2" : ""}`}
+                className={`relative overflow-hidden bg-secondary ${i % 2 === 1 ? "lg:order-2" : ""}`}
               >
                 <img
                   src={project.image}
@@ -93,7 +93,7 @@ export function Projects() {
                   {project.tech.map((t) => (
                     <span
                       key={t}
-                      className="rounded-lg border border-border bg-secondary/40 px-3 py-1.5 font-mono text-xs text-foreground"
+                      className="rounded-lg border border-border bg-secondary px-3 py-1.5 font-mono text-xs text-foreground"
                     >
                       {t}
                     </span>
@@ -102,7 +102,7 @@ export function Projects() {
 
                 <a
                   href="#contact"
-                  className="mt-8 inline-flex items-center gap-2 rounded-full bg-gradient-accent px-5 py-3 text-sm font-semibold text-primary-foreground transition-transform hover:scale-[1.03]"
+                  className="mt-8 inline-flex items-center gap-2 rounded-full bg-gradient-primary px-5 py-3 text-sm font-semibold text-primary-foreground transition-transform hover:scale-[1.03]"
                 >
                   View Project
                   <ArrowUpRight className="h-4 w-4" />

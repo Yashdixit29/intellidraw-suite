@@ -39,7 +39,7 @@ const GROUPS = [
 export function Skills() {
   return (
     <section id="skills" className="relative py-24">
-      <div className="pointer-events-none absolute inset-x-0 top-1/3 h-64 bg-violet/10 blur-[130px]" />
+      <div className="pointer-events-none absolute inset-x-0 top-1/3 h-64 bg-primary-soft/70 blur-[120px]" />
       <div className="relative mx-auto max-w-6xl px-5">
         <SectionHeading
           eyebrow="Technical Skills"
@@ -54,7 +54,7 @@ export function Skills() {
               className="reveal group rounded-3xl glass-card p-6 transition-all duration-300 hover:-translate-y-1 hover:border-primary/40"
             >
               <div className="flex min-w-0 items-center gap-3">
-                <span className="grid h-11 w-11 shrink-0 place-items-center rounded-2xl bg-gradient-accent text-primary-foreground transition-transform group-hover:scale-105">
+                <span className="grid h-11 w-11 shrink-0 place-items-center rounded-2xl bg-gradient-primary text-primary-foreground transition-transform group-hover:scale-105">
                   <Icon className="h-5 w-5" />
                 </span>
                 <h3 className="truncate text-base font-semibold">{title}</h3>
@@ -63,7 +63,7 @@ export function Skills() {
                 {items.map((item) => (
                   <li
                     key={item}
-                    className="rounded-lg border border-border bg-secondary/40 px-3 py-1.5 font-mono text-xs text-muted-foreground transition-colors group-hover:text-foreground"
+                    className="rounded-lg border border-border bg-secondary px-3 py-1.5 font-mono text-xs text-muted-foreground transition-colors group-hover:text-foreground"
                   >
                     {item}
                   </li>

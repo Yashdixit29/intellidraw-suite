@@ -37,7 +37,7 @@ export function Education() {
 
           <div className="mt-12 border-l border-border pl-6 sm:pl-10">
             <div className="reveal relative rounded-3xl glass-card p-7">
-              <span className="absolute top-9 -left-[1.9rem] grid h-10 w-10 place-items-center rounded-full bg-gradient-accent text-primary-foreground sm:-left-[3.15rem]">
+              <span className="absolute top-9 -left-[1.9rem] grid h-10 w-10 place-items-center rounded-full bg-gradient-primary text-primary-foreground sm:-left-[3.15rem]">
                 <GraduationCap className="h-5 w-5" />
               </span>
               <p className="font-mono text-[11px] tracking-[0.2em] text-primary uppercase">
@@ -54,7 +54,7 @@ export function Education() {
                 {COURSEWORK.map((c) => (
                   <span
                     key={c}
-                    className="rounded-full border border-border bg-secondary/40 px-3.5 py-1.5 text-xs text-foreground"
+                    className="rounded-full border border-border bg-secondary px-3.5 py-1.5 text-xs text-foreground"
                   >
                     {c}
                   </span>
@@ -79,7 +79,7 @@ export function Education() {
                 key={cert.title}
                 className="reveal flex min-w-0 gap-4 rounded-3xl glass-card p-6 transition-all duration-300 hover:-translate-y-1 hover:border-primary/40"
               >
-                <span className="grid h-11 w-11 shrink-0 place-items-center rounded-2xl bg-secondary/70 text-primary">
+                <span className="grid h-11 w-11 shrink-0 place-items-center rounded-2xl bg-primary-soft text-primary">
                   <Award className="h-5 w-5" />
                 </span>
                 <div className="min-w-0">
@@ -100,7 +100,7 @@ export function Education() {
               {["English", "Hindi"].map((lang) => (
                 <span
                   key={lang}
-                  className="rounded-2xl border border-border bg-secondary/40 px-6 py-3 text-sm font-medium"
+                  className="rounded-2xl border border-border bg-secondary px-6 py-3 text-sm font-medium"
                 >
                   {lang}
                 </span>

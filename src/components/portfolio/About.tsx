@@ -48,7 +48,7 @@ export function About() {
               {FOCUS.map((f) => (
                 <span
                   key={f}
-                  className="rounded-full border border-border bg-secondary/40 px-3.5 py-1.5 text-xs text-foreground"
+                  className="rounded-full border border-border bg-secondary px-3.5 py-1.5 text-xs text-foreground"
                 >
                   {f}
                 </span>
@@ -64,7 +64,7 @@ export function About() {
             <ul className="mt-6 space-y-5">
               {INFO.map(({ icon: Icon, label, value }) => (
                 <li key={label} className="flex min-w-0 items-start gap-3">
-                  <span className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-secondary/70 text-primary">
+                  <span className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-primary-soft text-primary">
                     <Icon className="h-4 w-4" />
                   </span>
                   <span className="min-w-0">
