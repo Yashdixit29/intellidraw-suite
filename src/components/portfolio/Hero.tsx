@@ -1,5 +1,7 @@
 import { ArrowRight, Mail, Sparkles } from "lucide-react";
-import portrait from "@/assets/yash-portrait.jpg";
+import portraitAsset from "@/assets/yash-portrait.png.asset.json";
+
+const portrait = portraitAsset.url;
 
 export function Hero() {
   return (
@@ -55,7 +57,7 @@ export function Hero() {
             <div className="relative overflow-hidden rounded-[2rem] border border-primary-foreground/20 bg-primary-foreground/10 float-slow">
               <img
                 src={portrait}
-                alt="Portrait of Yash Dixit — placeholder profile image"
+                alt="Portrait of Yash Dixit"
                 width={1024}
                 height={1280}
                 className="aspect-[4/5] w-full object-cover"
@@ -66,8 +68,8 @@ export function Hero() {
               <p className="text-[11px] text-muted-foreground">Full-stack AI projects</p>
             </div>
             <div className="absolute top-6 -right-3 rounded-2xl bg-background px-4 py-2.5 shadow-[var(--shadow-lift)]">
-              <p className="text-xs font-semibold text-foreground">Placeholder photo</p>
-              <p className="text-[11px] text-muted-foreground">Swap in a real portrait</p>
+              <p className="text-xs font-semibold text-foreground">AI &amp; Full-Stack</p>
+              <p className="text-[11px] text-muted-foreground">Open to internships</p>
             </div>
           </div>
         </div>

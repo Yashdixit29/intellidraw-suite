@@ -1,7 +1,10 @@
 import { ArrowUpRight, Check } from "lucide-react";
 import { SectionHeading } from "./SectionHeading";
-import curiosity from "@/assets/project-curiosity.jpg";
-import nior from "@/assets/project-nior.jpg";
+import curiosityAsset from "@/assets/curiosity-ai.png.asset.json";
+import niorAsset from "@/assets/nior-store.png.asset.json";
+
+const curiosity = curiosityAsset.url;
+const nior = niorAsset.url;
 
 const PROJECTS = [
   {
@@ -60,7 +63,7 @@ export function Projects() {
               >
                 <img
                   src={project.image}
-                  alt={`${project.name} project mockup placeholder`}
+                  alt={`${project.name} project preview`}
                   loading="lazy"
                   width={1280}
                   height={864}
