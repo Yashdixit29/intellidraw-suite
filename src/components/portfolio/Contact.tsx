@@ -1,7 +1,12 @@
 import { useState } from "react";
 import { CheckCircle2, Linkedin, Mail, Phone, Send } from "lucide-react";
 import { z } from "zod";
+import emailjs from "@emailjs/browser";
 import { SectionHeading } from "./SectionHeading";
+
+const EMAILJS_SERVICE_ID = "service_jxsumef";
+const EMAILJS_TEMPLATE_ID = "template_snr78bz";
+const EMAILJS_PUBLIC_KEY = "OQUPITSpSH-pCxyWH";
 
 const schema = z.object({
   name: z.string().trim().min(2, "Please enter your name").max(100, "Name is too long"),
