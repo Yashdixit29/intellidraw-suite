@@ -63,7 +63,7 @@ export function Projects() {
               >
                 <img
                   src={project.image}
-                  alt={`${project.name} project mockup placeholder`}
+                  alt={`${project.name} project preview`}
                   loading="lazy"
                   width={1280}
                   height={864}
