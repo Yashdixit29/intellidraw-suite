@@ -1,7 +1,12 @@
 import { useState } from "react";
 import { CheckCircle2, Linkedin, Mail, Phone, Send } from "lucide-react";
 import { z } from "zod";
+import emailjs from "@emailjs/browser";
 import { SectionHeading } from "./SectionHeading";
+
+const EMAILJS_SERVICE_ID = "service_jxsumef";
+const EMAILJS_TEMPLATE_ID = "template_snr78bz";
+const EMAILJS_PUBLIC_KEY = "OQUPITSpSH-pCxyWH";
 
 const schema = z.object({
   name: z.string().trim().min(2, "Please enter your name").max(100, "Name is too long"),
@@ -38,8 +43,10 @@ export function Contact() {
   const [values, setValues] = useState({ name: "", email: "", subject: "", message: "" });
   const [errors, setErrors] = useState<Errors>({});
   const [sent, setSent] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
-  const onSubmit = (e: React.FormEvent) => {
+  const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const result = schema.safeParse(values);
     if (!result.success) {
@@ -49,11 +56,33 @@ export function Contact() {
         if (!next[key]) next[key] = issue.message;
       });
       setErrors(next);
+      setSubmitError(null);
       return;
     }
     setErrors({});
-    setSent(true);
-    setValues({ name: "", email: "", subject: "", message: "" });
+    setSubmitError(null);
+    setSending(true);
+
+    try {
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          from_name: values.name,
+          from_email: values.email,
+          subject: values.subject,
+          message: values.message,
+        },
+        EMAILJS_PUBLIC_KEY,
+      );
+      setSent(true);
+      setValues({ name: "", email: "", subject: "", message: "" });
+    } catch (error) {
+      console.error("EmailJS error:", error);
+      setSubmitError("Something went wrong while sending your message. Please try again or email directly.");
+    } finally {
+      setSending(false);
+    }
   };
 
   const inputClass =
@@ -94,10 +123,9 @@ export function Contact() {
             {sent ? (
               <div className="flex flex-col items-center py-10 text-center">
                 <CheckCircle2 className="h-12 w-12 text-primary" />
-                <h3 className="mt-5 text-xl font-semibold">Message ready to send</h3>
+                <h3 className="mt-5 text-xl font-semibold">Message sent!</h3>
                 <p className="mt-3 max-w-sm text-sm text-muted-foreground">
-                  Thanks for reaching out. Your details are validated — you can also email
-                  yashdixit2910@gmail.com directly for a faster reply.
+                  Thanks for reaching out. Your message has been delivered to Yash's inbox.
                 </p>
                 <button
                   type="button"
@@ -109,6 +137,11 @@ export function Contact() {
               </div>
             ) : (
               <form onSubmit={onSubmit} noValidate className="space-y-5">
+                {submitError && (
+                  <p className="rounded-xl bg-destructive/10 px-4 py-3 text-sm text-destructive">
+                    {submitError}
+                  </p>
+                )}
                 {FIELDS.map((field) => (
                   <div key={field.name}>
                     <label
@@ -123,6 +156,7 @@ export function Contact() {
                       type={field.type}
                       placeholder={field.placeholder}
                       value={values[field.name]}
+                      disabled={sending}
                       onChange={(e) =>
                         setValues((v) => ({ ...v, [field.name]: e.target.value }))
                       }
@@ -147,6 +181,7 @@ export function Contact() {
                     rows={5}
                     placeholder="Tell me about the role or project..."
                     value={values.message}
+                    disabled={sending}
                     onChange={(e) => setValues((v) => ({ ...v, message: e.target.value }))}
                     className={`${inputClass} resize-none`}
                   />
@@ -157,10 +192,11 @@ export function Contact() {
 
                 <button
                   type="submit"
-                  className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground transition-transform hover:scale-[1.01] sm:w-auto"
+                  disabled={sending}
+                  className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground transition-transform hover:scale-[1.01] disabled:opacity-70 disabled:cursor-not-allowed sm:w-auto"
                 >
                   <Send className="h-4 w-4" />
-                  Send Message
+                  {sending ? "Sending..." : "Send Message"}
                 </button>
               </form>
             )}
