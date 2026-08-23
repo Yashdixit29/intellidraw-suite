@@ -43,7 +43,7 @@ const SERVICES = [
 
 export function Services() {
   return (
-    <section id="services" className="relative py-24">
+    <section id="services" className="relative bg-secondary py-24">
       <div className="mx-auto max-w-6xl px-5">
         <SectionHeading
           eyebrow="What I Do"

@@ -65,7 +65,7 @@ export function Education() {
         </div>
       </section>
 
-      <section id="certifications" className="relative py-24">
+      <section id="certifications" className="relative bg-secondary py-24">
         <div className="mx-auto max-w-6xl px-5">
           <SectionHeading
             eyebrow="Certifications"
