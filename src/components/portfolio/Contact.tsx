@@ -181,6 +181,7 @@ export function Contact() {
                     rows={5}
                     placeholder="Tell me about the role or project..."
                     value={values.message}
+                    disabled={sending}
                     onChange={(e) => setValues((v) => ({ ...v, message: e.target.value }))}
                     className={`${inputClass} resize-none`}
                   />
