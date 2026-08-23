@@ -33,7 +33,7 @@ export function Nav() {
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "border-b border-border bg-background/80 py-3 backdrop-blur-xl"
+          ? "border-b border-border bg-background/90 py-3 shadow-[var(--shadow-soft)] backdrop-blur-xl"
           : "border-b border-transparent py-5"
       }`}
     >
@@ -52,13 +52,13 @@ export function Nav() {
                 href={`#${link.id}`}
                 className={`relative rounded-full px-3 py-2 text-sm transition-colors ${
                   active === link.id
-                    ? "text-foreground"
+                    ? "text-primary"
                     : "text-muted-foreground hover:text-foreground"
                 }`}
               >
                 {link.label}
                 {active === link.id && (
-                  <span className="absolute inset-x-3 -bottom-0.5 h-px bg-gradient-accent" />
+                  <span className="absolute inset-x-3 -bottom-0.5 h-px bg-accent" />
                 )}
               </a>
             </li>
@@ -67,7 +67,7 @@ export function Nav() {
 
         <a
           href="#contact"
-          className="ml-auto hidden rounded-full bg-gradient-accent px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-transform hover:scale-[1.03] lg:ml-0 lg:inline-flex"
+          className="ml-auto hidden rounded-full bg-gradient-accent px-5 py-2.5 text-sm font-semibold text-accent-foreground transition-transform hover:scale-[1.03] lg:ml-0 lg:inline-flex"
         >
           Let's Connect
         </a>
@@ -101,7 +101,7 @@ export function Nav() {
               <a
                 href="#contact"
                 onClick={() => setOpen(false)}
-                className="block rounded-xl bg-gradient-accent px-4 py-3 text-center text-sm font-semibold text-primary-foreground"
+                className="block rounded-xl bg-gradient-accent px-4 py-3 text-center text-sm font-semibold text-accent-foreground"
               >
                 Let's Connect
               </a>
