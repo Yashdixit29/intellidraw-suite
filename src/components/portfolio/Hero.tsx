@@ -54,20 +54,42 @@ export function Hero() {
 
           <div className="reveal relative mx-auto w-full max-w-sm">
             <span className="pointer-events-none absolute -top-6 -left-8 h-32 w-32 rounded-full bg-accent" />
-            <div className="relative overflow-hidden rounded-[2rem] border border-primary-foreground/20 bg-primary-foreground/10 float-slow">
+
+            {/* Portrait in a circular mask */}
+            <div className="relative mx-auto aspect-square w-full max-w-[20rem] overflow-hidden rounded-full border-4 border-primary-foreground/25 bg-primary-foreground/10 float-slow">
               <img
                 src={portrait}
                 alt="Portrait of Yash Dixit"
-                width={1024}
-                height={1280}
-                className="aspect-[4/5] w-full object-cover"
+                loading="eager"
+                className="h-full w-full object-cover"
               />
             </div>
-            <div className="absolute -bottom-5 -left-4 rounded-2xl bg-background px-4 py-3 shadow-[var(--shadow-lift)]">
-              <p className="font-display text-lg text-primary">2</p>
-              <p className="text-[11px] text-muted-foreground">Full-stack AI projects</p>
-            </div>
-            <div className="absolute top-6 -right-3 rounded-2xl bg-background px-4 py-2.5 shadow-[var(--shadow-lift)]">
+
+            {/* Project thumbnails in rounded masks */}
+            <a
+              href="#projects"
+              className="absolute -bottom-6 -left-2 h-24 w-32 overflow-hidden rounded-2xl border-2 border-primary-foreground/30 bg-background shadow-[var(--shadow-lift)] transition-transform hover:scale-105"
+            >
+              <img
+                src={CURIOSITY_IMAGE}
+                alt="Curiosity AI project preview"
+                loading="lazy"
+                className="h-full w-full object-cover"
+              />
+            </a>
+            <a
+              href="#projects"
+              className="absolute -top-2 -right-4 h-24 w-32 overflow-hidden rounded-2xl border-2 border-primary-foreground/30 bg-background shadow-[var(--shadow-lift)] transition-transform hover:scale-105"
+            >
+              <img
+                src={NIOR_IMAGE}
+                alt="Nior e-commerce project preview"
+                loading="lazy"
+                className="h-full w-full object-cover"
+              />
+            </a>
+
+            <div className="absolute bottom-8 -right-2 rounded-2xl bg-background px-4 py-2.5 shadow-[var(--shadow-lift)]">
               <p className="text-xs font-semibold text-foreground">AI &amp; Full-Stack</p>
               <p className="text-[11px] text-muted-foreground">Open to internships</p>
             </div>
