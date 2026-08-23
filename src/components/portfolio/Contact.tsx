@@ -123,10 +123,9 @@ export function Contact() {
             {sent ? (
               <div className="flex flex-col items-center py-10 text-center">
                 <CheckCircle2 className="h-12 w-12 text-primary" />
-                <h3 className="mt-5 text-xl font-semibold">Message ready to send</h3>
+                <h3 className="mt-5 text-xl font-semibold">Message sent!</h3>
                 <p className="mt-3 max-w-sm text-sm text-muted-foreground">
-                  Thanks for reaching out. Your details are validated — you can also email
-                  yashdixit2910@gmail.com directly for a faster reply.
+                  Thanks for reaching out. Your message has been delivered to Yash's inbox.
                 </p>
                 <button
                   type="button"
@@ -138,6 +137,11 @@ export function Contact() {
               </div>
             ) : (
               <form onSubmit={onSubmit} noValidate className="space-y-5">
+                {submitError && (
+                  <p className="rounded-xl bg-destructive/10 px-4 py-3 text-sm text-destructive">
+                    {submitError}
+                  </p>
+                )}
                 {FIELDS.map((field) => (
                   <div key={field.name}>
                     <label
